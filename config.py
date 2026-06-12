@@ -3,7 +3,7 @@
 # Model settings
 MODEL_CONFIG = {
     "max_response_length": 500,
-    "memory_size": 50,  # Number of past messages to remember
+    "memory_size": 50,  # Number of past messages to remember in RAM
     "confidence_threshold": 0.5,
 }
 
@@ -18,6 +18,18 @@ TOKENIZER_CONFIG = {
 KB_CONFIG = {
     "max_knowledge_entries": 1000,
     "similarity_threshold": 0.6,
+}
+
+# Persistent Storage settings
+STORAGE_CONFIG = {
+    "enabled": True,
+    "storage_type": "json",  # Options: "json", "sqlite", "pickle"
+    "data_dir": "data",
+    "auto_save": True,
+    "save_interval": 5,  # Save every N interactions
+    "max_memory_entries": 10000,  # Max entries in persistent memory
+    "backup_enabled": True,
+    "backup_count": 3,
 }
 
 # Task settings
